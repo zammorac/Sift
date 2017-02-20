@@ -1,0 +1,16 @@
+raycast backwards
+
+array of nodes for path
+
+self populating node list
+
+enemy indices
+
+enemy spawn on node[myIndex]
+
+
+
+
+Title Screen
+
+Welcome to the Internet dear user! Please use the wasd or cursor keys to navigate through the various winding passageways in your search for truth.
