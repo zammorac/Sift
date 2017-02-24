@@ -80,7 +80,7 @@ public class GameManager : MonoBehaviour {
         mazeObjects.SetActive(false);
         battleObjects.SetActive(true);
         gameObject.GetComponent<Battle_Manager>().m_Enemy.SetHealth(enemyHealth);
-        gameObject.GetComponent<Battle_Manager>().m_Player.SetHealth(20);
+        gameObject.GetComponent<Battle_Manager>().m_Player.SetHealth(14);
         gameObject.GetComponent<Battle_Manager>().m_GUI.startFlameWar();
     }
 

@@ -21,10 +21,10 @@ public class BattleGUI : MonoBehaviour {
     // Use this for initialization
     void Start () {
 
-        System.IO.StreamReader[] m_Quotes = new System.IO.StreamReader[4] { new System.IO.StreamReader("Assets\\Battle Quotes\\Rational Quotes.txt"),
-                                                                        new System.IO.StreamReader("Assets\\Battle Quotes\\Nazi Quotes.txt"),
-                                                                        new System.IO.StreamReader("Assets\\Battle Quotes\\Teasing Quotes.txt"),
-                                                                        new System.IO.StreamReader("Assets\\Battle Quotes\\Alt-Facts.txt") };
+        System.IO.StreamReader[] m_Quotes = new System.IO.StreamReader[4] { new System.IO.StreamReader("Final_Build_Data\\Battle Quotes\\Rational Quotes.txt"),
+                                                                        new System.IO.StreamReader("Final_Build_Data\\Battle Quotes\\Nazi Quotes.txt"),
+                                                                        new System.IO.StreamReader("Final_Build_Data\\Battle Quotes\\Teasing Quotes.txt"),
+                                                                        new System.IO.StreamReader("Final_Build_Data\\Battle Quotes\\Alt-Facts.txt") };
 
 
         string Line;

@@ -72,7 +72,6 @@ public class EnemyAI : MonoBehaviour {
 
         if(currentState != previousState)
         {
-            Debug.Log(currentState);
             previousState = currentState;
         }
 

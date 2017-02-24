@@ -48,6 +48,7 @@ public class Battle_Manager : MonoBehaviour {
             switch (attackType)
             {
                 case "Calm":
+                    HideButtons(false);
                     m_Player.Attack(m_Enemy, Random.Range(3f, 6f));
                     gameObject.GetComponent<Turn_Timer>().Countdown(3f);
                     m_Player.Attack1.GetComponent<AttackTimer>().play();
@@ -56,6 +57,7 @@ public class Battle_Manager : MonoBehaviour {
                     break;
 
                 case "Troll":
+                    HideButtons(false);
                     m_Player.Attack(m_Enemy, Random.Range(2f, 4f));
                     m_Player.Attack(m_Player, -3f);
                     gameObject.GetComponent<Turn_Timer>().Countdown(3f);
@@ -65,6 +67,7 @@ public class Battle_Manager : MonoBehaviour {
                     break;
 
                 case "Angry":
+                    HideButtons(false);
                     m_Player.Attack(m_Enemy, 7f);
                     m_Player.Attack(m_Player, 3f);
                     gameObject.GetComponent<Turn_Timer>().Countdown(4f);
@@ -78,7 +81,7 @@ public class Battle_Manager : MonoBehaviour {
                     break;
             }
 
-            HideButtons();
+            
         }
     }
 
@@ -123,16 +126,25 @@ public class Battle_Manager : MonoBehaviour {
 
     public void NextTurn()
     {
-        m_IsPlayerTurn = !m_IsPlayerTurn;
-
-        if (!m_IsPlayerTurn)
-        {      
-            Enemy_Attack();
-            HideButtons(false);
+        if (m_Player.is_dead || m_Enemy.is_dead)
+        {
+            m_IsPlayerTurn = true;
+            HideButtons(true);
+            m_Manager.endBattle(m_Player.is_dead);
+            End_Battle();
         }
         else
         {
-            HideButtons(true);
+            m_IsPlayerTurn = !m_IsPlayerTurn;
+
+            if (!m_IsPlayerTurn)
+            {
+                Enemy_Attack();
+            }
+            else
+            {
+                HideButtons(true);
+            }
         }
     }
 
@@ -147,11 +159,6 @@ public class Battle_Manager : MonoBehaviour {
     // Update is called once per frame
     void Update ()
     {
-		if(m_Player.is_dead || m_Enemy.is_dead)
-        {
-            m_IsPlayerTurn = false;
-            m_Manager.endBattle(m_Player.is_dead);
-            End_Battle();
-        }
+
 	}
 }

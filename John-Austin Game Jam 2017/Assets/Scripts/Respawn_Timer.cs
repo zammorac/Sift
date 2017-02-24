@@ -30,7 +30,7 @@ public class Respawn_Timer : MonoBehaviour {
     // Update is called once per frame
     void Update ()
     {
-		if(m_Active)
+		if(m_Active && gameObject.activeInHierarchy)
         {
             m_Countdown -= Time.deltaTime;
 

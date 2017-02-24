@@ -13,11 +13,6 @@ public class Battle_Player : Battle_Target
 	// Update is called once per frame
 	void Update ()
     {
-		
-        if (Input.GetKey("[3]"))
-        {
-            Attack(m_Manager.GetEnemy(), 20f);
-        }
 
 
     }
